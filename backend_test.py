@@ -147,7 +147,7 @@ class PortfolioAPITester:
                     "subject": "Check out this website http://spam.com",
                     "message": "This message contains a URL which should be filtered"
                 },
-                "expected_status": 400
+                "expected_status": 422
             }
         ]
         
