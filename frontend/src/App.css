@@ -117,12 +117,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #10b981;
+  background: #3b82f6;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #059669;
+  background: #1d4ed8;
 }
 
 /* Loading Animation */
@@ -143,7 +143,7 @@ body {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -152,7 +152,7 @@ body {
 /* Professional Focus Ring */
 .focus-ring:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 /* Section Spacing */
@@ -168,7 +168,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
