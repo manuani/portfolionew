@@ -222,6 +222,9 @@ async def submit_contact_form(contact_data: ContactMessageCreate, request: Reque
             
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
+    except HTTPException:
+        # Re-raise HTTPExceptions (like rate limiting 429) without modification
+        raise
     except Exception as e:
         logger.error(f"Error submitting contact form: {str(e)}")
         raise HTTPException(status_code=500, detail="Internal server error")
