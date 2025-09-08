@@ -30,7 +30,7 @@ const Skills = ({ data }) => {
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
             Skills & Expertise
           </h2>
-          <div className="w-24 h-1 bg-emerald-500 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Proven expertise across enterprise technology, leadership, and strategic transformation
           </p>
