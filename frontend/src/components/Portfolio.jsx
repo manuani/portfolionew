@@ -43,6 +43,7 @@ const Portfolio = () => {
         <Contact data={portfolioData.personal.contact} />
       </main>
       <Footer />
+      <Toaster />
     </div>
   );
 };
