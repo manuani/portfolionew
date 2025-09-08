@@ -45,8 +45,8 @@ const Skills = ({ data }) => {
                 onClick={() => setActiveTab(category)}
                 className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${
                   activeTab === category
-                    ? 'bg-emerald-500 text-white shadow-md'
-                    : 'text-slate-600 hover:text-emerald-600'
+                    ? 'bg-blue-500 text-white shadow-md'
+                    : 'text-slate-600 hover:text-blue-600'
                 }`}
               >
                 {skillCategories[category].title}
