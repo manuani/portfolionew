@@ -37,7 +37,7 @@ const About = ({ data }) => {
 
           <div className="grid grid-cols-2 gap-6">
             {data.achievements.map((achievement, index) => (
-              <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow bg-white border-0 shadow-md">
+              <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow bg-white border border-slate-200 shadow-md hover:border-blue-200">
                 <CardContent className="p-0">
                   <div className="text-3xl font-bold text-blue-600 mb-2">
                     {achievement.metric}
@@ -53,7 +53,7 @@ const About = ({ data }) => {
 
         {/* Core Competencies */}
         <div className="grid md:grid-cols-4 gap-8">
-          <Card className="text-center p-6 hover:shadow-lg transition-all hover:-translate-y-1 bg-white border-0 shadow-md">
+          <Card className="text-center p-6 hover:shadow-lg transition-all hover:-translate-y-1 bg-white border border-slate-200 shadow-md hover:border-blue-200">
             <CardContent className="p-0">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <TrendingUp className="h-8 w-8 text-blue-600" />
@@ -63,7 +63,7 @@ const About = ({ data }) => {
             </CardContent>
           </Card>
 
-          <Card className="text-center p-6 hover:shadow-lg transition-all hover:-translate-y-1 bg-white border-0 shadow-md">
+          <Card className="text-center p-6 hover:shadow-lg transition-all hover:-translate-y-1 bg-white border border-slate-200 shadow-md hover:border-blue-200">
             <CardContent className="p-0">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-blue-600" />
@@ -73,7 +73,7 @@ const About = ({ data }) => {
             </CardContent>
           </Card>
 
-          <Card className="text-center p-6 hover:shadow-lg transition-all hover:-translate-y-1 bg-white border-0 shadow-md">
+          <Card className="text-center p-6 hover:shadow-lg transition-all hover:-translate-y-1 bg-white border border-slate-200 shadow-md hover:border-blue-200">
             <CardContent className="p-0">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="h-8 w-8 text-blue-600" />
@@ -83,7 +83,7 @@ const About = ({ data }) => {
             </CardContent>
           </Card>
 
-          <Card className="text-center p-6 hover:shadow-lg transition-all hover:-translate-y-1 bg-white border-0 shadow-md">
+          <Card className="text-center p-6 hover:shadow-lg transition-all hover:-translate-y-1 bg-white border border-slate-200 shadow-md hover:border-blue-200">
             <CardContent className="p-0">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Globe className="h-8 w-8 text-blue-600" />
