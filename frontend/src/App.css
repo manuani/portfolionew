@@ -43,7 +43,7 @@ body {
 
 /* Button Styles */
 .btn-primary {
-  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  background: linear-gradient(135deg, #10b981, #059669);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -56,13 +56,13 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.25);
+  box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.25);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  background: linear-gradient(135deg, #059669, #047857);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px 0 rgba(139, 92, 246, 0.35);
+  box-shadow: 0 6px 20px 0 rgba(16, 185, 129, 0.35);
   color: white;
 }
 
@@ -72,8 +72,8 @@ body {
 
 .btn-secondary {
   background: transparent;
-  color: #8b5cf6;
-  border: 2px solid #8b5cf6;
+  color: #10b981;
+  border: 2px solid #10b981;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   font-weight: 600;
@@ -87,10 +87,10 @@ body {
 }
 
 .btn-secondary:hover {
-  background: #8b5cf6;
+  background: #10b981;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px 0 rgba(139, 92, 246, 0.25);
+  box-shadow: 0 6px 20px 0 rgba(16, 185, 129, 0.25);
 }
 
 .btn-secondary:active {
