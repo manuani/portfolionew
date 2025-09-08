@@ -283,3 +283,6 @@ async def get_status_checks():
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
+
+# Include the router in the main app AFTER all routes are defined
+app.include_router(api_router)
