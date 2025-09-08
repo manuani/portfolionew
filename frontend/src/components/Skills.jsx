@@ -61,12 +61,12 @@ const Skills = ({ data }) => {
             <div className="space-y-8">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {skillCategories.technical.skills.map((skill, index) => (
-                  <Card key={index} className="p-6 hover:shadow-lg transition-all hover:-translate-y-1 bg-white border-0 shadow-md">
+                  <Card key={index} className="p-6 hover:shadow-lg transition-all hover:-translate-y-1 bg-white border border-purple-100 shadow-md hover:border-purple-200">
                     <CardContent className="p-0">
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="font-semibold text-slate-900">{skill.name}</h3>
                         {skill.category && (
-                          <Badge variant="secondary" className="text-xs bg-emerald-100 text-emerald-700 hover:bg-emerald-100">
+                          <Badge variant="secondary" className="text-xs bg-purple-100 text-purple-700 hover:bg-purple-100">
                             {skill.category}
                           </Badge>
                         )}
