@@ -24,13 +24,13 @@ const Skills = ({ data }) => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-white">
+    <section id="skills" className="py-20 bg-purple-50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
             Skills & Expertise
           </h2>
-          <div className="w-24 h-1 bg-emerald-500 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-purple-500 mx-auto mb-8"></div>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Proven expertise across enterprise technology, leadership, and strategic transformation
           </p>
@@ -38,15 +38,15 @@ const Skills = ({ data }) => {
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="bg-slate-100 p-1 rounded-lg">
+          <div className="bg-white p-1 rounded-lg border border-purple-100 shadow-sm">
             {Object.keys(skillCategories).map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveTab(category)}
                 className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${
                   activeTab === category
-                    ? 'bg-emerald-500 text-white shadow-md'
-                    : 'text-slate-600 hover:text-emerald-600'
+                    ? 'bg-purple-500 text-white shadow-md'
+                    : 'text-slate-600 hover:text-purple-600'
                 }`}
               >
                 {skillCategories[category].title}
