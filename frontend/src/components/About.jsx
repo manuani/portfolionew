@@ -10,7 +10,7 @@ const About = ({ data }) => {
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
             About Me
           </h2>
-          <div className="w-24 h-1 bg-emerald-500 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
