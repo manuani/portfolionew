@@ -126,8 +126,7 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
-# Include the router in the main app
-app.include_router(api_router)
+# Router will be included after routes are defined
 
 app.add_middleware(
     CORSMiddleware,
