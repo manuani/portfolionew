@@ -40,7 +40,7 @@ const Header = ({ activeSection }) => {
         <div className="flex items-center justify-between">
           <button 
             onClick={() => scrollToSection('hero')}
-            className="text-xl font-bold text-emerald-400 hover:text-emerald-300 transition-colors"
+            className="text-xl font-bold text-blue-400 hover:text-blue-300 transition-colors"
           >
             Murali
           </button>
@@ -53,8 +53,8 @@ const Header = ({ activeSection }) => {
                 onClick={() => scrollToSection(item.id)}
                 className={`nav-link transition-colors duration-300 ${
                   activeSection === item.id 
-                    ? 'text-emerald-400' 
-                    : 'text-slate-300 hover:text-emerald-400'
+                    ? 'text-blue-400' 
+                    : 'text-slate-300 hover:text-blue-400'
                 }`}
               >
                 {item.label}
@@ -64,7 +64,7 @@ const Header = ({ activeSection }) => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-slate-300 hover:text-emerald-400 transition-colors z-50"
+            className="md:hidden text-slate-300 hover:text-blue-400 transition-colors z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -81,8 +81,8 @@ const Header = ({ activeSection }) => {
                   onClick={() => scrollToSection(item.id)}
                   className={`block w-full text-left nav-link transition-colors duration-300 ${
                     activeSection === item.id 
-                      ? 'text-emerald-400' 
-                      : 'text-slate-300 hover:text-emerald-400'
+                      ? 'text-blue-400' 
+                      : 'text-slate-300 hover:text-blue-400'
                   }`}
                 >
                   {item.label}
