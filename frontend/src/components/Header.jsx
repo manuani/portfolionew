@@ -63,7 +63,7 @@ const Header = ({ activeSection }) => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-slate-300 hover:text-emerald-400 transition-colors"
+            className="md:hidden text-slate-300 hover:text-emerald-400 transition-colors z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
