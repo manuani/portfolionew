@@ -66,7 +66,7 @@ const Skills = ({ data }) => {
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="font-semibold text-slate-900">{skill.name}</h3>
                         {skill.category && (
-                          <Badge variant="secondary" className="text-xs bg-emerald-100 text-emerald-700 hover:bg-emerald-100">
+                          <Badge variant="secondary" className="text-xs bg-blue-100 text-blue-700 hover:bg-blue-100">
                             {skill.category}
                           </Badge>
                         )}
