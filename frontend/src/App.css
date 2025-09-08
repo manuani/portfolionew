@@ -143,7 +143,7 @@ body {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -152,7 +152,7 @@ body {
 /* Professional Focus Ring */
 .focus-ring:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
 }
 
 /* Section Spacing */
@@ -168,7 +168,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
