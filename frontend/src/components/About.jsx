@@ -39,7 +39,7 @@ const About = ({ data }) => {
             {data.achievements.map((achievement, index) => (
               <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow bg-white border-0 shadow-md">
                 <CardContent className="p-0">
-                  <div className="text-3xl font-bold text-emerald-600 mb-2">
+                  <div className="text-3xl font-bold text-blue-600 mb-2">
                     {achievement.metric}
                   </div>
                   <div className="text-sm text-slate-600 font-medium">
