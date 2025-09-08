@@ -12,7 +12,7 @@ const Projects = ({ data }) => {
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
             Key Projects & Initiatives
           </h2>
-          <div className="w-24 h-1 bg-emerald-500 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Transformational projects that delivered measurable business impact
           </p>
@@ -20,20 +20,20 @@ const Projects = ({ data }) => {
 
         <div className="grid lg:grid-cols-2 gap-8">
           {data.map((project) => (
-            <Card key={project.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden bg-white border-0 shadow-lg">
+            <Card key={project.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden bg-white border border-slate-200 shadow-lg hover:border-blue-200">
               <CardContent className="p-0">
-                <div className="h-2 bg-gradient-to-r from-emerald-500 to-emerald-600"></div>
+                <div className="h-2 bg-gradient-to-r from-blue-500 to-blue-600"></div>
                 <div className="p-8">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">
+                      <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-emerald-600 font-medium text-sm mb-3">
+                      <p className="text-blue-600 font-medium text-sm mb-3">
                         {project.company}
                       </p>
                     </div>
-                    <Award className="h-6 w-6 text-emerald-500" />
+                    <Award className="h-6 w-6 text-blue-500" />
                   </div>
 
                   <p className="text-slate-600 leading-relaxed mb-6">
@@ -43,10 +43,10 @@ const Projects = ({ data }) => {
                   {/* Impact */}
                   <div className="mb-6">
                     <div className="flex items-center space-x-2 mb-3">
-                      <TrendingUp className="h-4 w-4 text-emerald-500" />
+                      <TrendingUp className="h-4 w-4 text-blue-500" />
                       <span className="text-sm font-semibold text-slate-900">Business Impact</span>
                     </div>
-                    <p className="text-slate-600 bg-emerald-50 p-3 rounded-lg">
+                    <p className="text-slate-600 bg-blue-50 p-3 rounded-lg border border-blue-100">
                       {project.impact}
                     </p>
                   </div>
@@ -59,7 +59,7 @@ const Projects = ({ data }) => {
                         <Badge 
                           key={index} 
                           variant="secondary"
-                          className="bg-slate-100 text-slate-700 hover:bg-slate-200"
+                          className="bg-blue-100 text-blue-700 hover:bg-blue-200"
                         >
                           {tech}
                         </Badge>
@@ -71,7 +71,7 @@ const Projects = ({ data }) => {
                   <div className="pt-4 border-t border-slate-100">
                     <Button 
                       variant="outline" 
-                      className="w-full group-hover:bg-emerald-50 group-hover:border-emerald-200 group-hover:text-emerald-700 transition-colors"
+                      className="w-full group-hover:bg-blue-50 group-hover:border-blue-200 group-hover:text-blue-700 transition-colors"
                     >
                       <ExternalLink className="h-4 w-4 mr-2" />
                       View Details
@@ -89,7 +89,7 @@ const Projects = ({ data }) => {
             <h3 className="text-3xl font-bold text-slate-900 mb-4">
               What Leaders Say
             </h3>
-            <div className="w-16 h-1 bg-emerald-500 mx-auto"></div>
+            <div className="w-16 h-1 bg-blue-500 mx-auto"></div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -110,9 +110,9 @@ const Projects = ({ data }) => {
                 position: "Vice President of IT - Brocade"
               }
             ].map((testimonial, index) => (
-              <Card key={index} className="p-6 bg-slate-50 border-0 shadow-md hover:shadow-lg transition-shadow">
+              <Card key={index} className="p-6 bg-white border border-slate-200 shadow-lg hover:shadow-xl transition-shadow hover:border-blue-200">
                 <CardContent className="p-0">
-                  <div className="text-4xl text-emerald-500 mb-4">"</div>
+                  <div className="text-4xl text-blue-500 mb-4">"</div>
                   <p className="text-slate-600 mb-6 italic leading-relaxed">
                     {testimonial.text}
                   </p>
