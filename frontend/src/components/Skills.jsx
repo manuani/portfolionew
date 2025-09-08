@@ -91,7 +91,7 @@ const Skills = ({ data }) => {
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {skillCategories.leadership.skills.map((skill, index) => (
-                <Card key={index} className="p-6 hover:shadow-lg transition-all hover:-translate-y-1 bg-white border-0 shadow-md">
+                <Card key={index} className="p-6 hover:shadow-lg transition-all hover:-translate-y-1 bg-white border border-slate-200 shadow-md hover:border-blue-200">
                   <CardContent className="p-0">
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="font-semibold text-slate-900">{skill.name}</h3>
