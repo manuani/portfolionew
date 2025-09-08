@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Test the Portfolio Backend API functionality including API health check, contact form submission with validation and rate limiting, contact messages retrieval with pagination, analytics tracking, database integration, and error handling."
+user_problem_statement: "Test the complete Portfolio Frontend functionality with focus on page loading & navigation, hero section, about section, skills section, experience section, projects section, contact form backend integration, footer, responsive design, and performance & polish."
 
 backend:
   - task: "API Health Check"
