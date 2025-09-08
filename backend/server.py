@@ -144,6 +144,143 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Utility function to get client IP
+def get_client_ip(request: Request) -> str:
+    x_forwarded_for = request.headers.get('x-forwarded-for')
+    if x_forwarded_for:
+        return x_forwarded_for.split(',')[0].strip()
+    return request.client.host if request.client else "unknown"
+
+# Rate limiting storage (in production, use Redis)
+rate_limit_storage = {}
+
+def check_rate_limit(ip_address: str, limit: int = 5, window: int = 3600) -> bool:
+    """Simple rate limiting: max 5 submissions per hour per IP"""
+    current_time = datetime.utcnow().timestamp()
+    
+    if ip_address not in rate_limit_storage:
+        rate_limit_storage[ip_address] = []
+    
+    # Remove old timestamps outside the window
+    rate_limit_storage[ip_address] = [
+        timestamp for timestamp in rate_limit_storage[ip_address] 
+        if current_time - timestamp < window
+    ]
+    
+    if len(rate_limit_storage[ip_address]) >= limit:
+        return False
+    
+    rate_limit_storage[ip_address].append(current_time)
+    return True
+
+# API Routes
+@api_router.get("/")
+async def root():
+    return {
+        "message": "Portfolio API is running", 
+        "version": "1.0.0",
+        "endpoints": [
+            "/api/contact",
+            "/api/contact/messages", 
+            "/api/analytics/page-view"
+        ]
+    }
+
+@api_router.post("/contact", response_model=ContactMessageResponse)
+async def submit_contact_form(contact_data: ContactMessageCreate, request: Request):
+    """Submit a contact form message"""
+    try:
+        # Get client information
+        client_ip = get_client_ip(request)
+        user_agent = request.headers.get('user-agent', 'unknown')
+        
+        # Rate limiting
+        if not check_rate_limit(client_ip):
+            raise HTTPException(
+                status_code=429, 
+                detail="Too many contact form submissions. Please try again later."
+            )
+        
+        # Create contact message
+        contact_message = ContactMessage(
+            **contact_data.dict(),
+            ip_address=client_ip,
+            user_agent=user_agent
+        )
+        
+        # Save to database
+        result = await db.contact_messages.insert_one(contact_message.dict())
+        
+        if result.inserted_id:
+            logger.info(f"Contact form submitted by {contact_data.email} from {client_ip}")
+            return ContactMessageResponse(
+                success=True,
+                message="Thank you for your message! I'll get back to you within 24 hours.",
+                id=contact_message.id
+            )
+        else:
+            raise HTTPException(status_code=500, detail="Failed to save contact message")
+            
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        logger.error(f"Error submitting contact form: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+@api_router.get("/contact/messages", response_model=ContactMessagesResponse)
+async def get_contact_messages(skip: int = 0, limit: int = 50):
+    """Get all contact messages (admin endpoint)"""
+    try:
+        # Get total count
+        total = await db.contact_messages.count_documents({})
+        
+        # Get messages with pagination
+        messages_cursor = db.contact_messages.find({}).sort("created_at", -1).skip(skip).limit(limit)
+        messages = await messages_cursor.to_list(length=limit)
+        
+        # Convert to response model
+        contact_messages = [ContactMessage(**msg) for msg in messages]
+        
+        return ContactMessagesResponse(messages=contact_messages, total=total)
+        
+    except Exception as e:
+        logger.error(f"Error fetching contact messages: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+@api_router.post("/analytics/page-view")
+async def track_page_view(page_view_data: PageViewCreate, request: Request):
+    """Track page views for analytics"""
+    try:
+        client_ip = get_client_ip(request)
+        user_agent = request.headers.get('user-agent', 'unknown')
+        
+        page_view = PageView(
+            **page_view_data.dict(),
+            ip_address=client_ip,
+            user_agent=user_agent
+        )
+        
+        await db.page_views.insert_one(page_view.dict())
+        
+        return {"success": True, "message": "Page view tracked"}
+        
+    except Exception as e:
+        logger.error(f"Error tracking page view: {str(e)}")
+        return {"success": False, "message": "Failed to track page view"}
+
+# Legacy endpoints (keeping for compatibility)
+@api_router.post("/status", response_model=StatusCheck)
+async def create_status_check(input: StatusCheckCreate):
+    status_dict = input.dict()
+    status_obj = StatusCheck(**status_dict)
+    _ = await db.status_checks.insert_one(status_obj.dict())
+    return status_obj
+
+@api_router.get("/status", response_model=List[StatusCheck])
+async def get_status_checks():
+    status_checks = await db.status_checks.find().to_list(1000)
+    return [StatusCheck(**status_check) for status_check in status_checks]
+
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
