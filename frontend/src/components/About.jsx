@@ -27,7 +27,7 @@ const About = ({ data }) => {
               <ul className="space-y-3">
                 {data.highlights.map((highlight, index) => (
                   <li key={index} className="flex items-start">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
                     <span className="text-slate-600">{highlight}</span>
                   </li>
                 ))}
