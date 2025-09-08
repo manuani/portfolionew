@@ -186,6 +186,81 @@ export const portfolioData = {
     "Salesforce Admin Certification (In Progress)"
   ],
 
+  blogs: [
+    {
+      id: 1,
+      title: "The Future of Enterprise AI: Strategic Implementation for Executives",
+      excerpt: "As AI transforms enterprise operations, here's how technology leaders can build successful AI strategies that deliver measurable business results.",
+      content: "Full blog content here...",
+      category: "AI & Technology",
+      publishDate: "2024-01-15",
+      readTime: "8 min read",
+      featured: true,
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
+      tags: ["AI", "Enterprise", "Strategy", "Leadership"]
+    },
+    {
+      id: 2,
+      title: "Digital Transformation: Lessons from $2B+ Enterprise Implementations", 
+      excerpt: "Key insights from leading digital transformation initiatives across Fortune 500 companies and high-growth tech organizations.",
+      content: "Full blog content here...",
+      category: "Digital Transformation",
+      publishDate: "2024-01-08",
+      readTime: "12 min read",
+      featured: true,
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=400&fit=crop",
+      tags: ["Digital Transformation", "Enterprise", "Leadership", "Technology"]
+    },
+    {
+      id: 3,
+      title: "Building High-Performance Global Technology Teams",
+      excerpt: "Strategies for scaling technology teams across multiple continents while maintaining culture, productivity, and innovation.",
+      content: "Full blog content here...",
+      category: "Leadership",
+      publishDate: "2024-01-01", 
+      readTime: "6 min read",
+      featured: false,
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=400&fit=crop",
+      tags: ["Leadership", "Team Building", "Global Teams", "Management"]
+    },
+    {
+      id: 4,
+      title: "CRM Modernization: From Legacy Systems to AI-Powered Platforms",
+      excerpt: "A comprehensive guide to modernizing enterprise CRM systems, based on successful implementations at Nextiva, Extreme Networks, and Brocade.",
+      content: "Full blog content here...",
+      category: "CRM & Sales Tech",
+      publishDate: "2023-12-20",
+      readTime: "10 min read", 
+      featured: false,
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
+      tags: ["CRM", "Salesforce", "Modernization", "Enterprise"]
+    },
+    {
+      id: 5,
+      title: "The ROI of Process Automation: Real-World Case Studies",
+      excerpt: "How strategic process automation delivered 55% efficiency gains and $100K+ quarterly savings across enterprise operations.",
+      content: "Full blog content here...",
+      category: "Process Automation",
+      publishDate: "2023-12-15",
+      readTime: "7 min read",
+      featured: false, 
+      image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=400&fit=crop",
+      tags: ["Automation", "RPA", "Process Improvement", "ROI"]
+    },
+    {
+      id: 6,
+      title: "Executive's Guide to Cloud Migration Strategy",
+      excerpt: "Best practices for enterprise cloud migration, from planning and risk assessment to execution and optimization.",
+      content: "Full blog content here...",
+      category: "Cloud Strategy", 
+      publishDate: "2023-12-10",
+      readTime: "9 min read",
+      featured: false,
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
+      tags: ["Cloud", "Migration", "Strategy", "Enterprise"]
+    }
+  ],
+
   testimonials: [
     {
       text: "His strategic vision, technical expertise, and deep understanding of business processes, combined with a relentless focus on customer outcomes, make him an invaluable asset.",
