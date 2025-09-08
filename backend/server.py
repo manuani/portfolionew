@@ -1,14 +1,16 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException, Request
+from fastapi.responses import JSONResponse
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field
-from typing import List
+from pydantic import BaseModel, Field, EmailStr, validator
+from typing import List, Optional
 import uuid
 from datetime import datetime
+import re
 
 
 ROOT_DIR = Path(__file__).parent
@@ -20,13 +22,102 @@ client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
 # Create the main app without a prefix
-app = FastAPI()
+app = FastAPI(title="Portfolio API", description="Backend API for Srinivasan Muralidharan's Portfolio")
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
 
-# Define Models
+# Contact Form Models
+class ContactMessage(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str = Field(..., min_length=2, max_length=100)
+    email: EmailStr
+    company: Optional[str] = Field(None, max_length=100)
+    subject: str = Field(..., min_length=5, max_length=200)
+    message: str = Field(..., min_length=10, max_length=2000)
+    status: str = Field(default="new")
+    ip_address: Optional[str] = None
+    user_agent: Optional[str] = None
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+    updated_at: datetime = Field(default_factory=datetime.utcnow)
+
+    @validator('name')
+    def validate_name(cls, v):
+        if not re.match(r'^[a-zA-Z\s\-\'\.]+$', v):
+            raise ValueError('Name can only contain letters, spaces, hyphens, apostrophes, and periods')
+        return v.strip()
+
+    @validator('subject', 'message')
+    def validate_text_fields(cls, v):
+        # Basic spam/malicious content filtering
+        spam_patterns = [
+            r'http[s]?://',  # URLs
+            r'www\.',        # Web addresses
+            r'<script',      # Script tags
+            r'javascript:',  # JavaScript
+            r'\bsex\b',      # Adult content
+            r'\bporn\b',     # Adult content
+        ]
+        
+        for pattern in spam_patterns:
+            if re.search(pattern, v.lower()):
+                raise ValueError('Content contains prohibited elements')
+        
+        return v.strip()
+
+class ContactMessageCreate(BaseModel):
+    name: str = Field(..., min_length=2, max_length=100)
+    email: EmailStr
+    company: Optional[str] = Field(None, max_length=100)
+    subject: str = Field(..., min_length=5, max_length=200)
+    message: str = Field(..., min_length=10, max_length=2000)
+
+    @validator('name')
+    def validate_name(cls, v):
+        if not re.match(r'^[a-zA-Z\s\-\'\.]+$', v):
+            raise ValueError('Name can only contain letters, spaces, hyphens, apostrophes, and periods')
+        return v.strip()
+
+    @validator('subject', 'message')
+    def validate_text_fields(cls, v):
+        # Basic spam/malicious content filtering
+        spam_patterns = [
+            r'http[s]?://',  # URLs
+            r'www\.',        # Web addresses
+            r'<script',      # Script tags
+            r'javascript:',  # JavaScript
+        ]
+        
+        for pattern in spam_patterns:
+            if re.search(pattern, v.lower()):
+                raise ValueError('Content contains prohibited elements')
+        
+        return v.strip()
+
+class ContactMessageResponse(BaseModel):
+    success: bool
+    message: str
+    id: str
+
+class ContactMessagesResponse(BaseModel):
+    messages: List[ContactMessage]
+    total: int
+
+# Page Analytics Models
+class PageViewCreate(BaseModel):
+    page: str
+    section: Optional[str] = None
+
+class PageView(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    page: str
+    section: Optional[str] = None
+    ip_address: Optional[str] = None
+    user_agent: Optional[str] = None
+    timestamp: datetime = Field(default_factory=datetime.utcnow)
+
+# Legacy Status Check Models (keeping for compatibility)
 class StatusCheck(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     client_name: str
@@ -34,23 +125,6 @@ class StatusCheck(BaseModel):
 
 class StatusCheckCreate(BaseModel):
     client_name: str
-
-# Add your routes to the router instead of directly to app
-@api_router.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-@api_router.post("/status", response_model=StatusCheck)
-async def create_status_check(input: StatusCheckCreate):
-    status_dict = input.dict()
-    status_obj = StatusCheck(**status_dict)
-    _ = await db.status_checks.insert_one(status_obj.dict())
-    return status_obj
-
-@api_router.get("/status", response_model=List[StatusCheck])
-async def get_status_checks():
-    status_checks = await db.status_checks.find().to_list(1000)
-    return [StatusCheck(**status_check) for status_check in status_checks]
 
 # Include the router in the main app
 app.include_router(api_router)
