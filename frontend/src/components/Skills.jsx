@@ -17,10 +17,10 @@ const Skills = ({ data }) => {
   };
 
   const getSkillColor = (level) => {
-    if (level >= 90) return 'bg-emerald-500';
-    if (level >= 80) return 'bg-emerald-400';
-    if (level >= 70) return 'bg-emerald-300';
-    return 'bg-emerald-200';
+    if (level >= 90) return 'bg-blue-500';
+    if (level >= 80) return 'bg-blue-400';
+    if (level >= 70) return 'bg-blue-300';
+    return 'bg-blue-200';
   };
 
   return (
