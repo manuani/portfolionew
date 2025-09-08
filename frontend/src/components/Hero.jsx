@@ -21,18 +21,18 @@ const Hero = ({ data }) => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center bg-gradient-to-br from-white via-blue-50 to-white relative overflow-hidden">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(59,130,246,0.15),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(147,197,253,0.1),transparent_50%)]"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(135deg,transparent_0%,rgba(59,130,246,0.05)_50%,transparent_100%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(59,130,246,0.08),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(147,197,253,0.06),transparent_50%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(135deg,transparent_0%,rgba(59,130,246,0.03)_50%,transparent_100%)]"></div>
         
         {/* Animated Background Elements */}
-        <div className="absolute top-20 left-10 w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-1 h-1 bg-blue-300 rounded-full animate-pulse delay-75"></div>
-        <div className="absolute bottom-40 left-20 w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse delay-150"></div>
-        <div className="absolute bottom-20 right-10 w-1 h-1 bg-blue-400 rounded-full animate-pulse delay-300"></div>
+        <div className="absolute top-20 left-10 w-2 h-2 bg-blue-400 rounded-full animate-pulse opacity-60"></div>
+        <div className="absolute top-40 right-20 w-1 h-1 bg-blue-300 rounded-full animate-pulse delay-75 opacity-60"></div>
+        <div className="absolute bottom-40 left-20 w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse delay-150 opacity-60"></div>
+        <div className="absolute bottom-20 right-10 w-1 h-1 bg-blue-400 rounded-full animate-pulse delay-300 opacity-60"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center relative z-10">
@@ -40,40 +40,40 @@ const Hero = ({ data }) => {
         <div className="space-y-8">
           {/* Achievement Badges */}
           <div className="flex flex-wrap gap-3 mb-6">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-xs font-medium">
               <Star className="h-3 w-3 mr-1" />
               20+ Years Experience
             </div>
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-xs font-medium">
               <TrendingUp className="h-3 w-3 mr-1" />
               $2B+ Growth Delivered
             </div>
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-xs font-medium">
               <Award className="h-3 w-3 mr-1" />
               Fortune 500 Leader
             </div>
           </div>
 
           <div className="space-y-6">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-sm font-medium">
               Available for Strategic Leadership Roles
             </div>
             
             <div className="space-y-4">
-              <h1 className="text-6xl lg:text-7xl font-bold text-white leading-tight">
+              <h1 className="text-6xl lg:text-7xl font-bold text-slate-900 leading-tight">
                 {data.name.split(' ')[0]}
                 <br />
-                <span className="text-blue-400">{data.name.split(' ')[1]}</span>
+                <span className="text-blue-600">{data.name.split(' ')[1]}</span>
               </h1>
-              <div className="text-2xl lg:text-3xl text-blue-200 font-light mb-2">
+              <div className="text-2xl lg:text-3xl text-blue-500 font-light mb-2">
                 "{data.nickname}"
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">
+              <h2 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
                 {data.title}
               </h2>
             </div>
             
-            <p className="text-xl text-slate-300 leading-relaxed max-w-2xl">
+            <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
               {data.description}
             </p>
           </div>
@@ -98,17 +98,17 @@ const Hero = ({ data }) => {
           </div>
 
           {/* Enhanced Quick Contact */}
-          <div className="flex items-center space-x-8 pt-6 border-t border-slate-700">
+          <div className="flex items-center space-x-8 pt-6 border-t border-slate-200">
             <a 
               href={`mailto:${data.contact.email}`}
-              className="flex items-center text-slate-400 hover:text-blue-400 transition-colors group"
+              className="flex items-center text-slate-600 hover:text-blue-600 transition-colors group"
             >
               <Mail className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
               <span className="hidden sm:inline">{data.contact.email}</span>
             </a>
             <a 
               href={`tel:${data.contact.phone}`}
-              className="flex items-center text-slate-400 hover:text-blue-400 transition-colors group"
+              className="flex items-center text-slate-600 hover:text-blue-600 transition-colors group"
             >
               <Phone className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
               <span className="hidden sm:inline">{data.contact.phone}</span>
@@ -117,7 +117,7 @@ const Hero = ({ data }) => {
               href={data.contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center text-slate-400 hover:text-blue-400 transition-colors group"
+              className="flex items-center text-slate-600 hover:text-blue-600 transition-colors group"
             >
               <Linkedin className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
               <span className="hidden sm:inline">LinkedIn</span>
@@ -128,26 +128,26 @@ const Hero = ({ data }) => {
         {/* Enhanced Profile Image */}
         <div className="flex justify-center lg:justify-end">
           <div className="relative">
-            <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-blue-400/30 shadow-2xl relative">
+            <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-blue-200 shadow-2xl relative">
               <img 
                 src={data.profileImage}
                 alt={data.name}
                 className="w-full h-full object-cover"
               />
               {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-transparent"></div>
             </div>
             
             {/* Enhanced Decorative Elements */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-blue-400/10 rounded-full border border-blue-400/20 backdrop-blur-sm"></div>
-            <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-blue-500/5 rounded-full border border-blue-500/10 backdrop-blur-sm"></div>
+            <div className="absolute -top-6 -right-6 w-32 h-32 bg-blue-100 rounded-full border border-blue-200 backdrop-blur-sm"></div>
+            <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-blue-50 rounded-full border border-blue-100 backdrop-blur-sm"></div>
             
             {/* Floating Achievement Cards */}
-            <div className="absolute -top-4 left-4 bg-slate-800/90 backdrop-blur-sm border border-blue-400/20 rounded-lg px-3 py-2 text-xs text-blue-400 font-medium">
+            <div className="absolute -top-4 left-4 bg-white/90 backdrop-blur-sm border border-blue-200 rounded-lg px-3 py-2 text-xs text-blue-600 font-medium shadow-lg">
               <TrendingUp className="h-3 w-3 inline mr-1" />
               55% Efficiency Gains
             </div>
-            <div className="absolute -bottom-4 right-4 bg-slate-800/90 backdrop-blur-sm border border-blue-400/20 rounded-lg px-3 py-2 text-xs text-blue-400 font-medium">
+            <div className="absolute -bottom-4 right-4 bg-white/90 backdrop-blur-sm border border-blue-200 rounded-lg px-3 py-2 text-xs text-blue-600 font-medium shadow-lg">
               <Award className="h-3 w-3 inline mr-1" />
               $30M+ Portfolio
             </div>
@@ -157,8 +157,8 @@ const Hero = ({ data }) => {
 
       {/* Enhanced Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-blue-400/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-blue-400 rounded-full mt-2 animate-pulse"></div>
+        <div className="w-6 h-10 border-2 border-blue-300 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-blue-500 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
