@@ -12,7 +12,7 @@ export const portfolioData = {
       linkedin: "https://www.linkedin.com/in/srinimuralidharan/",
       location: "Available for Remote & Hybrid Opportunities"
     },
-    profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+    profileImage: "https://customer-assets.emergentagent.com/job_skill-spotlight-31/artifacts/iy6n2i1n_image.png"
   },
 
   about: {
