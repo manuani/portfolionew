@@ -132,8 +132,8 @@ const Hero = ({ data }) => {
               <img 
                 src={data.profileImage}
                 alt={data.name}
-                className="w-full h-full object-cover object-top"
-                style={{ objectPosition: '50% 20%' }}
+                className="w-full h-full object-cover"
+                style={{ objectPosition: '50% 15%' }}
               />
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-transparent"></div>
