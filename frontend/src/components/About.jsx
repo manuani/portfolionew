@@ -55,8 +55,8 @@ const About = ({ data }) => {
         <div className="grid md:grid-cols-4 gap-8">
           <Card className="text-center p-6 hover:shadow-lg transition-all hover:-translate-y-1 bg-white border-0 shadow-md">
             <CardContent className="p-0">
-              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="h-8 w-8 text-emerald-600" />
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="h-8 w-8 text-blue-600" />
               </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-2">Strategic Growth</h3>
               <p className="text-sm text-slate-600">Driving business transformation and revenue acceleration</p>
