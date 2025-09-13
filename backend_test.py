@@ -12,7 +12,7 @@ import sys
 import os
 
 # Get the backend URL from environment
-BACKEND_URL = "https://skill-spotlight-31.preview.emergentagent.com/api"
+BACKEND_URL = "https://skill-showcase-95.preview.emergentagent.com/api"
 
 class PortfolioAPITester:
     def __init__(self):
