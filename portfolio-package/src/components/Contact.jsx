@@ -7,8 +7,8 @@ import { Textarea } from './ui/textarea';
 import { useToast } from '../hooks/use-toast';
 import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+// For GitHub Pages deployment - no backend needed
+// You can integrate with Formspree, EmailJS, or Netlify Forms for production
 
 const Contact = ({ data }) => {
   const [formData, setFormData] = useState({
