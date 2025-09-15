@@ -347,7 +347,7 @@ const Contact = ({ data }) => {
                     onChange={handleInputChange}
                     required
                     rows={5}
-                    className={`bg-slate-700 border-slate-600 text-white placeholder-slate-400 focus:border-emerald-500 ${
+                    className={`bg-slate-700 border-slate-600 text-white placeholder-slate-400 focus:border-blue-500 ${
                       errors.message ? 'border-red-500 focus:border-red-500' : ''
                     }`}
                     placeholder="Tell me about your project, opportunity, or question..."
