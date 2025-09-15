@@ -20,8 +20,8 @@ const Portfolio = () => {
       const scrollPosition = window.scrollY + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i]);
-        if (section && section.offsetTop <= scrollPosition) {
+        const element = document.getElementById(sections[i]);
+        if (element && element.offsetTop <= scrollPosition) {
           setActiveSection(sections[i]);
           break;
         }
@@ -33,12 +33,8 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header 
-        activeSection={activeSection} 
-        setActiveSection={setActiveSection}
-      />
-      
+    <div className="portfolio">
+      <Header activeSection={activeSection} />
       <main>
         <Hero data={portfolioData.personal} />
         <About data={portfolioData.about} />
@@ -48,7 +44,6 @@ const Portfolio = () => {
         <Blog data={portfolioData.blogs} />
         <Contact data={portfolioData.personal.contact} />
       </main>
-      
       <Footer />
       <Toaster />
     </div>

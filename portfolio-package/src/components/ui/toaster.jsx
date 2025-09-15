@@ -1,30 +1,33 @@
-import React from 'react';
-import { useToast } from '../../hooks/use-toast';
+import { useToast } from "../../hooks/use-toast"
+import {
+  Toast,
+  ToastClose,
+  ToastDescription,
+  ToastProvider,
+  ToastTitle,
+  ToastViewport,
+} from "./toast"
 
 export function Toaster() {
-  const { toasts } = useToast();
-
-  if (!toasts.length) return null;
+  const { toasts } = useToast()
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 space-y-2">
-      {toasts.map((toast) => (
-        <div
-          key={toast.id}
-          className={`max-w-sm p-4 rounded-lg shadow-lg transition-all duration-300 ${
-            toast.variant === 'destructive'
-              ? 'bg-red-600 text-white'
-              : 'bg-green-600 text-white'
-          }`}
-        >
-          {toast.title && (
-            <div className="font-semibold text-sm">{toast.title}</div>
-          )}
-          {toast.description && (
-            <div className="text-sm opacity-90">{toast.description}</div>
-          )}
-        </div>
-      ))}
-    </div>
+    <ToastProvider>
+      {toasts.map(function ({ id, title, description, action, ...props }) {
+        return (
+          <Toast key={id} {...props}>
+            <div className="grid gap-1">
+              {title && <ToastTitle>{title}</ToastTitle>}
+              {description && (
+                <ToastDescription>{description}</ToastDescription>
+              )}
+            </div>
+            {action}
+            <ToastClose />
+          </Toast>
+        );
+      })}
+      <ToastViewport />
+    </ToastProvider>
   );
 }
