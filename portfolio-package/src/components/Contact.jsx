@@ -183,7 +183,7 @@ const Contact = ({ data }) => {
                       <h4 className="text-white font-semibold">Phone</h4>
                       <a 
                         href={`tel:${data.phone}`}
-                        className="text-emerald-400 hover:text-emerald-300 transition-colors"
+                        className="text-blue-400 hover:text-blue-300 transition-colors"
                       >
                         {data.phone}
                       </a>
