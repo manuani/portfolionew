@@ -51,7 +51,7 @@ const Footer = () => {
           {/* Back to Top */}
           <button
             onClick={scrollToTop}
-            className="inline-flex items-center justify-center w-12 h-12 bg-emerald-500 text-white rounded-full hover:bg-emerald-600 transition-colors group"
+            className="inline-flex items-center justify-center w-12 h-12 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors group"
           >
             <ArrowUp className="h-5 w-5 group-hover:-translate-y-1 transition-transform" />
           </button>
