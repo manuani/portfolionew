@@ -326,7 +326,7 @@ const Contact = ({ data }) => {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className={`bg-slate-700 border-slate-600 text-white placeholder-slate-400 focus:border-emerald-500 ${
+                      className={`bg-slate-700 border-slate-600 text-white placeholder-slate-400 focus:border-blue-500 ${
                         errors.subject ? 'border-red-500 focus:border-red-500' : ''
                       }`}
                       placeholder="What's this about?"
