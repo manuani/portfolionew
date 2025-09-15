@@ -5,7 +5,6 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { useToast } from '../hooks/use-toast';
-import axios from 'axios';
 
 // For GitHub Pages deployment - no backend needed
 // You can integrate with Formspree, EmailJS, or Netlify Forms for production
