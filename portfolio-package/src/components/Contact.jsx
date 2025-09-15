@@ -164,7 +164,7 @@ const Contact = ({ data }) => {
                       <h4 className="text-white font-semibold">Email</h4>
                       <a 
                         href={`mailto:${data.email}`}
-                        className="text-emerald-400 hover:text-emerald-300 transition-colors"
+                        className="text-blue-400 hover:text-blue-300 transition-colors"
                       >
                         {data.email}
                       </a>
