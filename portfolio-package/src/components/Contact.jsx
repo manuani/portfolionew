@@ -136,7 +136,7 @@ const Contact = ({ data }) => {
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Let's Connect
           </h2>
-          <div className="w-24 h-1 bg-emerald-500 mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Ready to discuss your next transformational technology initiative? Let's explore how we can drive results together.
           </p>
