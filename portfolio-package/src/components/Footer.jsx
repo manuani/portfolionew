@@ -44,7 +44,7 @@ const Footer = () => {
               Available for strategic leadership opportunities
             </p>
             <p className="text-xs text-slate-600 flex items-center justify-center">
-              Built with <Heart className="h-3 w-3 mx-1 text-emerald-500" /> and modern technology
+              Built with <Heart className="h-3 w-3 mx-1 text-blue-500" /> and modern technology
             </p>
           </div>
 
