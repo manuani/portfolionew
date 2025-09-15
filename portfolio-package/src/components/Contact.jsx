@@ -307,7 +307,7 @@ const Contact = ({ data }) => {
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className={`bg-slate-700 border-slate-600 text-white placeholder-slate-400 focus:border-emerald-500 ${
+                      className={`bg-slate-700 border-slate-600 text-white placeholder-slate-400 focus:border-blue-500 ${
                         errors.company ? 'border-red-500 focus:border-red-500' : ''
                       }`}
                       placeholder="Your company"
