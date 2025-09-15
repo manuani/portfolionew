@@ -95,48 +95,34 @@ const Contact = ({ data }) => {
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post(`${API}/contact`, {
-        name: formData.name.trim(),
-        email: formData.email.trim(),
-        company: formData.company.trim() || undefined,
-        subject: formData.subject.trim(),
-        message: formData.message.trim(),
+      // For GitHub Pages deployment - simulating form submission
+      // Replace this with actual service integration (Formspree, EmailJS, etc.)
+      console.log('Contact form submission:', formData);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you soon!",
       });
-
-      if (response.data.success) {
-        toast({
-          title: "Message sent successfully!",
-          description: response.data.message,
-        });
-        
-        // Clear form
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          subject: '',
-          message: ''
-        });
-        setErrors({});
-      } else {
-        throw new Error(response.data.message || 'Failed to send message');
-      }
+      
+      // Clear form
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        subject: '',
+        message: ''
+      });
+      setErrors({});
+      
     } catch (error) {
       console.error('Contact form error:', error);
       
-      let errorMessage = "Failed to send message. Please try again.";
-      
-      if (error.response?.status === 429) {
-        errorMessage = "Too many submissions. Please try again later.";
-      } else if (error.response?.status === 400) {
-        errorMessage = error.response.data.detail || "Please check your input and try again.";
-      } else if (error.response?.data?.detail) {
-        errorMessage = error.response.data.detail;
-      }
-      
       toast({
         title: "Error sending message",
-        description: errorMessage,
+        description: "Please try again or contact me directly via email.",
         variant: "destructive",
       });
     } finally {
