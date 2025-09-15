@@ -27,7 +27,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/srinimuralidharan/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-emerald-500 transition-colors group"
+              className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors group"
             >
               <Linkedin className="h-5 w-5 text-slate-300 group-hover:text-white" />
             </a>
