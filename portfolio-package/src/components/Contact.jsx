@@ -216,12 +216,12 @@ const Contact = ({ data }) => {
               <Card className="p-6 bg-slate-800 border-slate-700 hover:bg-slate-750 transition-colors">
                 <CardContent className="p-0">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center">
-                      <MapPin className="h-6 w-6 text-emerald-400" />
+                    <div className="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center">
+                      <MapPin className="h-6 w-6 text-blue-400" />
                     </div>
                     <div>
                       <h4 className="text-white font-semibold">Availability</h4>
-                      <p className="text-emerald-400">{data.location}</p>
+                      <p className="text-blue-400">{data.location}</p>
                     </div>
                   </div>
                 </CardContent>
