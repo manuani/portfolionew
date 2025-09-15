@@ -204,7 +204,7 @@ const Contact = ({ data }) => {
                         href={data.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-emerald-400 hover:text-emerald-300 transition-colors"
+                        className="text-blue-400 hover:text-blue-300 transition-colors"
                       >
                         Connect with me
                       </a>
