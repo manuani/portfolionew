@@ -1,4 +1,4 @@
-/ Load configuration from environment or config file
+// Load configuration from environment or config file
 const path = require('path');
 
 // Environment variable overrides
