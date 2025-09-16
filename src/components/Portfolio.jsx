@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { portfolioData } from '../../../portfolio-package/src/data/mock';
+import { portfolioData } from '../data/mock';
 import Header from './Header';
 import Hero from './Hero';
-import About from '../../../portfolio-package/src/components/About';
-import Skills from '../../../portfolio-package/src/components/Skills';
-import Experience from '../../../portfolio-package/src/components/Experience';
-import Projects from '../../../portfolio-package/src/components/Projects';
-import Blog from '../../../portfolio-package/src/components/Blog';
-import Contact from '../../../portfolio-package/src/components/Contact';
-import Footer from '../../../portfolio-package/src/components/Footer';
-import { Toaster } from '../../../portfolio-package/src/components/ui/toaster';
+import About from './About';
+import Skills from './Skills';
+import Experience from './Experience';
+import Projects from './Projects';
+import Blog from './Blog';
+import Contact from './Contact';
+import Footer from './Footer';
+import { Toaster } from './ui/toaster';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('hero');
