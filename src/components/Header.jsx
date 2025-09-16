@@ -33,9 +33,7 @@ const Header = ({ activeSection }) => {
   ];
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg' : 'bg-white bg-opacity-90'
-    }`}>
+    <header className="fixed top-0 w-full z-50 bg-blue-600">
       <nav className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <button 
