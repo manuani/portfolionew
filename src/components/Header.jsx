@@ -34,13 +34,13 @@ const Header = ({ activeSection }) => {
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg border-b border-slate-200' : 'bg-transparent'
+      isScrolled ? 'bg-white shadow-lg' : 'bg-white bg-opacity-90'
     }`}>
       <nav className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <button 
             onClick={() => scrollToSection('hero')}
-            className="text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
+            className="text-xl font-bold text-blue-600 hover:text-blue-700"
           >
             Murali
           </button>
@@ -51,10 +51,10 @@ const Header = ({ activeSection }) => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`nav-link transition-colors duration-300 ${
+                className={`px-3 py-2 rounded font-medium transition-colors ${
                   activeSection === item.id 
-                    ? 'text-blue-600' 
-                    : 'text-slate-700 hover:text-blue-600'
+                    ? 'text-blue-600 bg-blue-50' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                 }`}
               >
                 {item.label}
@@ -64,7 +64,7 @@ const Header = ({ activeSection }) => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-slate-700 hover:text-blue-600 transition-colors z-50"
+            className="md:hidden text-gray-700 hover:text-blue-600"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -73,16 +73,16 @@ const Header = ({ activeSection }) => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-sm border-t border-slate-200">
-            <div className="px-6 py-4 space-y-4">
+          <div className="md:hidden mt-4 pb-4 border-t border-gray-200">
+            <div className="pt-4 space-y-2">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left nav-link transition-colors duration-300 ${
+                  className={`block w-full text-left px-3 py-2 rounded font-medium transition-colors ${
                     activeSection === item.id 
-                      ? 'text-blue-600' 
-                      : 'text-slate-700 hover:text-blue-600'
+                      ? 'text-blue-600 bg-blue-50' 
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                   }`}
                 >
                   {item.label}
