@@ -18,9 +18,6 @@ const About = ({ data }) => {
             <h3 className="text-2xl font-bold text-slate-900 mb-4">
               {data.summary.split('.')[0]}.
             </h3>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              {data.summary}
-            </p>
             
             <div className="space-y-4">
               <h4 className="text-xl font-semibold text-slate-900">Key Highlights:</h4>
